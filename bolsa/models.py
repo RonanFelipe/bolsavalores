@@ -83,3 +83,19 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     def is_staff(self):
         """Se o usuário for um membro do staff?"""
         return self.is_admin
+
+
+class Ativos(models.Model):
+    nome = models.CharField(
+        verbose_name="Nome da Ação",
+        max_length=255,
+    )
+    codigo = models.CharField(
+        verbose_name="Código do Ativo",
+        max_length=5,
+    )
+    descricao = models.TextField(
+        verbose_name="Descrição do Ativo",
+        blank=True,
+        null=True
+    )
