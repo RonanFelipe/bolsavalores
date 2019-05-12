@@ -36,4 +36,4 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(MyUser, UserAdmin)
-admin.sites.register(Ativos)
+admin.site.register(Ativos)
