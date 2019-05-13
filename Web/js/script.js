@@ -28,5 +28,8 @@ function loadAtivos() {
         .catch(function (error) {
             console.log(error)
         })
+}
 
+function createAtivos() {
+    
 }
