@@ -93,6 +93,7 @@ class Ativos(models.Model):
     codigo = models.CharField(
         verbose_name="Código do Ativo",
         max_length=5,
+        unique=True
     )
     descricao = models.TextField(
         verbose_name="Descrição do Ativo",
