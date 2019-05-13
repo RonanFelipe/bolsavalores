@@ -29,7 +29,3 @@ function loadAtivos() {
             console.log(error)
         })
 }
-
-function createAtivos() {
-    
-}
