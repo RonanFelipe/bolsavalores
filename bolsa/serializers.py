@@ -27,3 +27,4 @@ class CompraSerializer(serializers.ModelSerializer):
         response = super().to_representation(instance)
         response['user'] = FakeUserSerializer(instance.user).data
         response['ativos'] = AtivosSerializer(instance.ativos).data
+        return response
