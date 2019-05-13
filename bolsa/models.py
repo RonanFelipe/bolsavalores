@@ -99,3 +99,9 @@ class Ativos(models.Model):
         blank=True,
         null=True
     )
+    preco = models.FloatField(
+        verbose_name="Preço das Ações",
+    )
+    quantidade = models.IntegerField(
+        verbose_name="Quantidade de ações"
+    )
