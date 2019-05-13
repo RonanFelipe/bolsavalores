@@ -5,12 +5,6 @@ function loadAtivos() {
             let ativos = data;
             for (let i = 0; i < ativos.length; i++) {
                 let coluna = document.getElementById("loadAtivos");
-                // let tagLarge = document.createElement("span");
-                // tagLarge.innerHTML = ativos[i].nome;
-                // tagLarge.classList.add('tag');
-                // tagLarge.classList.add('is-primary');
-                // tagLarge.classList.add('is-medium');
-
                 let divAtivos = document.createElement("div");
                 divAtivos.classList.add('tags');
                 divAtivos.classList.add('has-addons');
