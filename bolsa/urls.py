@@ -8,6 +8,8 @@ from bolsa import views
 # http://127.0.0.1:8000/api/v1/ativos/
 router = DefaultRouter()
 router.register(r'ativos', views.AtivoSet)
+router.register(r'user', views.FakeUserSet)
+router.register(r'compra', views.AtivoSet)
 
 urlpatterns = [
     url(r'^', include(router.urls))
