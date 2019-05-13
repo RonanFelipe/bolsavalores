@@ -5,9 +5,14 @@ function loadAtivos() {
             let ativos = data;
             for (let i = 0; i < ativos.length; i++) {
                 let coluna = document.getElementById("loadAtivos");
-                let h5 = document.createElement("h5");
-                h5.innerHTML = ativos[i].nome;
-                coluna.appendChild(h5);
+                let tagLarge = document.createElement("span");
+                tagLarge.innerHTML = ativos[i].nome;
+                tagLarge.classList.add('tag');
+                tagLarge.classList.add('is-primary');
+                tagLarge.classList.add('is-medium');
+                brElement = document.createElement("br");
+                coluna.appendChild(tagLarge);
+                coluna.appendChild(brElement);
             }
         })
         .catch(function (error) {
