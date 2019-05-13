@@ -121,10 +121,17 @@ class FakeUser(models.Model):
     def __str__(self):
         return self.name
 
-# class CompraAtivos(models.Model):
-#     ativos = models.ForeignKey(
-#         Ativos,
-#         related_name="ativo_code",
-#         verbose_name="Ativos Comprados",
-#         on_delete=models.PROTECT
-#     )
+
+class CompraAtivos(models.Model):
+    ativos = models.ForeignKey(
+        Ativos,
+        related_name="ativo_code",
+        verbose_name="Ativos Comprados",
+        on_delete=models.PROTECT
+    )
+    user = models.OneToOneField(
+        FakeUser,
+        related_name="user_code",
+        verbose_name="Fake user",
+        on_delete=models.PROTECT
+    )
