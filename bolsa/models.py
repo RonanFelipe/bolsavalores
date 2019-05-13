@@ -106,3 +106,25 @@ class Ativos(models.Model):
     quantidade = models.IntegerField(
         verbose_name="Quantidade de ações"
     )
+
+
+class FakeUser(models.Model):
+    name = models.CharField(
+        verbose_name="Nome do usuário",
+        max_length=255,
+    )
+    nacionalidade = models.CharField(
+        verbose_name="País de Origem",
+        max_length=255
+    )
+
+    def __str__(self):
+        return self.name
+
+# class CompraAtivos(models.Model):
+#     ativos = models.ForeignKey(
+#         Ativos,
+#         related_name="ativo_code",
+#         verbose_name="Ativos Comprados",
+#         on_delete=models.PROTECT
+#     )

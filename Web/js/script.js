@@ -16,7 +16,7 @@ function loadAtivos() {
                 secondSpan.classList.add('is-info');
                 thirdSpan.classList.add('tag');
                 thirdSpan.classList.add('is-warning');
-                firstSpan.innerHTML = ativos[i].nome;
+                firstSpan.innerHTML = ativos[i].codigo;
                 secondSpan.innerHTML = "R$ " + ativos[i].preco;
                 thirdSpan.innerHTML = "Qtd " + ativos[i].quantidade;
                 divAtivos.appendChild(firstSpan);
