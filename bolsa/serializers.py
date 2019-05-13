@@ -7,4 +7,4 @@ class AtivosSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ativos
-        fields = ('id', 'nome', 'codigo', 'descricao')
+        fields = ('id', 'nome', 'codigo', 'descricao', 'preco', 'quantidade')
