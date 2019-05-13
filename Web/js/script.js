@@ -5,14 +5,25 @@ function loadAtivos() {
             let ativos = data;
             for (let i = 0; i < ativos.length; i++) {
                 let coluna = document.getElementById("loadAtivos");
-                let tagLarge = document.createElement("span");
-                tagLarge.innerHTML = ativos[i].nome;
-                tagLarge.classList.add('tag');
-                tagLarge.classList.add('is-primary');
-                tagLarge.classList.add('is-medium');
-                brElement = document.createElement("br");
-                coluna.appendChild(tagLarge);
-                coluna.appendChild(brElement);
+                // let tagLarge = document.createElement("span");
+                // tagLarge.innerHTML = ativos[i].nome;
+                // tagLarge.classList.add('tag');
+                // tagLarge.classList.add('is-primary');
+                // tagLarge.classList.add('is-medium');
+
+                let divAtivos = document.createElement("div");
+                divAtivos.classList.add('tags');
+                divAtivos.classList.add('has-addons');
+                let firstSpan = document.createElement("span");
+                let secondSpan = document.createElement("span");
+                firstSpan.classList.add('tag');
+                secondSpan.classList.add('tag');
+                secondSpan.classList.add('is-info');
+                firstSpan.innerHTML = ativos[i].nome;
+                secondSpan.innerHTML = "R$ " + ativos[i].preco;
+                divAtivos.appendChild(firstSpan);
+                divAtivos.appendChild(secondSpan);
+                coluna.appendChild(divAtivos);
             }
         })
         .catch(function (error) {
