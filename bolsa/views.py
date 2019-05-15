@@ -17,5 +17,5 @@ class FakeUserSet(viewsets.ModelViewSet):
 
 
 class CompraSet(viewsets.ModelViewSet):
-    queryset = CompraAtivos
+    queryset = CompraAtivos.objects.all()
     serializer_class = CompraSerializer

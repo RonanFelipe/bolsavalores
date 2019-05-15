@@ -107,6 +107,9 @@ class Ativos(models.Model):
         verbose_name="Quantidade de ações"
     )
 
+    def __str__(self):
+        return self.codigo
+
 
 class FakeUser(models.Model):
     name = models.CharField(

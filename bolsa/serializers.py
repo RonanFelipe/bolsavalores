@@ -18,10 +18,20 @@ class FakeUserSerializer(serializers.ModelSerializer):
 
 
 class CompraSerializer(serializers.ModelSerializer):
+    # user = FakeUserSerializer(read_only=True, many=True)
+    # ativos = AtivosSerializer(read_only=True, many=True)
 
     class Meta:
         model = CompraAtivos
         fields = ('id', 'ativos', 'user')
+
+    # def create(self, validated_data):
+    #     compra = FakeUser(
+    #         ativos=validated_data['ativos'],
+    #         user=validated_data['user']
+    #     )
+    #     compra.save()
+    #     return compra
 
     def to_representation(self, instance):
         response = super().to_representation(instance)
