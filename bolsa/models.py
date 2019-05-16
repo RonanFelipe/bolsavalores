@@ -122,6 +122,9 @@ class Ativos(models.Model):
         related_name="user_code_ativo",
         on_delete=models.PROTECT,
     )
+    status = models.IntegerField(
+        verbose_name="Status de venda"
+    )
 
     def __str__(self):
         return self.codigo

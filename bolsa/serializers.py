@@ -14,7 +14,7 @@ class AtivosSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ativos
-        fields = ('id', 'nome', 'codigo', 'descricao', 'preco', 'user')
+        fields = ('id', 'nome', 'codigo', 'descricao', 'preco', 'user', 'status')
 
     def to_representation(self, instance):
         response = super().to_representation(instance)
