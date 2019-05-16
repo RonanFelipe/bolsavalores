@@ -85,6 +85,20 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
         return self.is_admin
 
 
+class FakeUser(models.Model):
+    name = models.CharField(
+        verbose_name="Nome do usuário",
+        max_length=255,
+    )
+    nacionalidade = models.CharField(
+        verbose_name="País de Origem",
+        max_length=255
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Ativos(models.Model):
     nome = models.CharField(
         verbose_name="Nome da Ação",
@@ -103,38 +117,11 @@ class Ativos(models.Model):
     preco = models.FloatField(
         verbose_name="Preço das Ações",
     )
-    quantidade = models.IntegerField(
-        verbose_name="Quantidade de ações"
+    user = models.ForeignKey(
+        FakeUser,
+        related_name="user_code_ativo",
+        on_delete=models.PROTECT,
     )
 
     def __str__(self):
         return self.codigo
-
-
-class FakeUser(models.Model):
-    name = models.CharField(
-        verbose_name="Nome do usuário",
-        max_length=255,
-    )
-    nacionalidade = models.CharField(
-        verbose_name="País de Origem",
-        max_length=255
-    )
-
-    def __str__(self):
-        return self.name
-
-
-class CompraAtivos(models.Model):
-    ativos = models.ForeignKey(
-        Ativos,
-        related_name="ativo_code",
-        verbose_name="Ativos Comprados",
-        on_delete=models.PROTECT
-    )
-    user = models.OneToOneField(
-        FakeUser,
-        related_name="user_code",
-        verbose_name="Fake user",
-        on_delete=models.PROTECT
-    )

@@ -1,0 +1,7 @@
+function compraAtivos() {
+    
+}
+
+function getAmount() {
+    
+}

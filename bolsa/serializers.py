@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Ativos, FakeUser, CompraAtivos
+from .models import Ativos, FakeUser
 
 
 class AtivosSerializer(serializers.ModelSerializer):
@@ -17,24 +17,14 @@ class FakeUserSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'nacionalidade')
 
 
-class CompraSerializer(serializers.ModelSerializer):
-    # user = FakeUserSerializer(read_only=True, many=True)
-    # ativos = AtivosSerializer(read_only=True, many=True)
-
-    class Meta:
-        model = CompraAtivos
-        fields = ('id', 'ativos', 'user')
-
-    # def create(self, validated_data):
-    #     compra = FakeUser(
-    #         ativos=validated_data['ativos'],
-    #         user=validated_data['user']
-    #     )
-    #     compra.save()
-    #     return compra
-
-    def to_representation(self, instance):
-        response = super().to_representation(instance)
-        response['user'] = FakeUserSerializer(instance.user).data
-        response['ativos'] = AtivosSerializer(instance.ativos).data
-        return response
+# class CompraSerializer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = CompraAtivos
+#         fields = ('id', 'ativos', 'user', 'qtd')
+#
+#     def to_representation(self, instance):
+#         response = super().to_representation(instance)
+#         response['user'] = FakeUserSerializer(instance.user).data
+#         response['ativos'] = AtivosSerializer(instance.ativos).data
+#         return response
