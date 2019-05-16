@@ -3,19 +3,23 @@ from rest_framework import serializers
 from .models import Ativos, FakeUser
 
 
-class AtivosSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Ativos
-        fields = ('id', 'nome', 'codigo', 'descricao', 'preco', 'quantidade')
-
-
 class FakeUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FakeUser
         fields = ('id', 'name', 'nacionalidade')
 
+
+class AtivosSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Ativos
+        fields = ('id', 'nome', 'codigo', 'descricao', 'preco', 'user')
+
+    def to_representation(self, instance):
+        response = super().to_representation(instance)
+        response['user'] = FakeUserSerializer(instance.user).data
+        return response
 
 # class CompraSerializer(serializers.ModelSerializer):
 #
