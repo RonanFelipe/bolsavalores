@@ -9,7 +9,7 @@ from .serializers import AtivosSerializer, FakeUserSerializer
 
 
 class AtivoSet(viewsets.ModelViewSet):
-    queryset = Ativos.objects.all()
+    queryset = Ativos.objects.filter(status=0)
     serializer_class = AtivosSerializer
 
 
