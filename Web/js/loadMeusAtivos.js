@@ -5,7 +5,7 @@ function searchUser() {
             let ativos = data;
             let userAtivos = [];
             let nomeUser = document.getElementById("nomeUser").value;
-            let removeColuna = document.getElementById("loadMeusAtivos").innerHTML = "";
+            let removeChildNodes = document.getElementById("loadMeusAtivos").innerHTML = "";
             for (let i = 0; i < ativos.length; i++){
                 if (nomeUser === ativos[i].user.name) {
                     userAtivos.push(ativos[i]);
@@ -18,14 +18,19 @@ function searchUser() {
                 divMeusAtivos.classList.add('has-addons');
                 let firstSpan = document.createElement("span");
                 let secondSpan = document.createElement("span");
+                let sellSpan = document.createElement("a");
+                sellSpan.classList.add('tag');
+                sellSpan.classList.add('is-danger');
                 firstSpan.classList.add('tag');
                 firstSpan.classList.add('is-dark');
                 secondSpan.classList.add('tag');
                 secondSpan.classList.add('is-success');
                 firstSpan.innerHTML = userAtivos[i].codigo;
                 secondSpan.innerHTML = "R$ " + userAtivos[i].preco;
+                sellSpan.innerHTML = "Vender";
                 divMeusAtivos.appendChild(firstSpan);
                 divMeusAtivos.appendChild(secondSpan);
+                divMeusAtivos.appendChild(sellSpan);
                 coluna.appendChild(divMeusAtivos);
             }
         })
