@@ -7,6 +7,11 @@ from .serializers import AtivosSerializer, FakeUserSerializer
 
 
 class AtivoSet(viewsets.ModelViewSet):
+    queryset = Ativos.objects.filter(status=0)
+    serializer_class = AtivosSerializer
+
+
+class AtivoNotForSale(viewsets.ModelViewSet):
     queryset = Ativos.objects.all()
     serializer_class = AtivosSerializer
 

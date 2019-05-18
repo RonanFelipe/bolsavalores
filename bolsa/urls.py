@@ -9,6 +9,7 @@ from bolsa import views
 router = DefaultRouter()
 router.register(r'ativos', views.AtivoSet)
 router.register(r'user', views.FakeUserSet)
+router.register(r'meusativos', views.AtivoNotForSale)
 
 urlpatterns = [
     url(r'^', include(router.urls))

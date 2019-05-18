@@ -1,5 +1,5 @@
 function searchUser() {
-    fetch('http://127.0.0.1:8000/api/v1/ativos/')
+    fetch('http://127.0.0.1:8000/api/v1/meusativos/')
         .then((resp) => resp.json())
         .then(function (data) {
             let ativos = data;
