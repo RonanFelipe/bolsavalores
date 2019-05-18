@@ -23,7 +23,7 @@
     <div>
         <br>
     </div>
-    <div class="columns is-gapless">
+    <div class="columns is-3">
         <div class="column is-one-quarter is-primary">
             <h3><strong>Ativos à Venda</strong></h3>
             <div id="loadAtivos"></div>
@@ -31,6 +31,13 @@
         </div>
         <div class="column is-one-quarter">
             <h3><strong>Meus Ativos</strong></h3>
+            <div class="field">
+                <label class="label">Nome Usuário</label>
+                <div class="control">
+                    <input id="nomeAtivo" class="input" type="text" placeholder="Nome Ativo">
+                </div>
+                <p class="help">Digite o nome do usuário</p>
+            </div>
             <div id="loadMeusAtivos"></div>
             <script>loadMeusAtivos()</script>
         </div>
