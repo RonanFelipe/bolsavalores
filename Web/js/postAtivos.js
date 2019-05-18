@@ -1,5 +1,3 @@
-document.getElementById("submitAtivo").addEventListener("click", createAtivos);
-
 function createAtivos() {
     let nome = document.getElementById("nomeAtivo").value;
     let codigo = document.getElementById("codigoAtivo").value;
