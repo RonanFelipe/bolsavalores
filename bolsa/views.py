@@ -1,6 +1,4 @@
 from rest_framework import viewsets
-from rest_framework.generics import get_object_or_404
-from rest_framework.views import APIView
 
 from .models import Ativos, FakeUser
 from .serializers import AtivosSerializer, FakeUserSerializer
@@ -9,7 +7,7 @@ from .serializers import AtivosSerializer, FakeUserSerializer
 
 
 class AtivoSet(viewsets.ModelViewSet):
-    queryset = Ativos.objects.filter(status=0)
+    queryset = Ativos.objects.all()
     serializer_class = AtivosSerializer
 
 
