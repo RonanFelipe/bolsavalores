@@ -30,16 +30,20 @@
             <script>loadAtivos()</script>
         </div>
         <div class="column is-one-quarter">
-            <h3><strong>Meus Ativos</strong></h3>
-            <div class="field">
+            <h3><strong>Ativos por usuário</strong></h3>
+            <br>
+            <div id="loadMeusAtivos"></div>
+            <br><br>
+            <div id="searchUser" class="field">
                 <label class="label">Nome Usuário</label>
                 <div class="control">
-                    <input id="nomeAtivo" class="input" type="text" placeholder="Nome Ativo">
+                    <input id="nomeUser" class="input" type="text" placeholder="Nome User">
                 </div>
                 <p class="help">Digite o nome do usuário</p>
             </div>
-            <div id="loadMeusAtivos"></div>
-            <script>loadMeusAtivos()</script>
+            <div class="control">
+                <button id="submitAtivo" class="button is-primary" onclick="searchUser()">Procurar</button>
+            </div>
         </div>
         <div class="column is-one-quarter">
             <h3><strong>Criar Ativos</strong></h3>
@@ -79,7 +83,7 @@
                 <p class="help">Digite o valor unitário dos ativos</p>
             </div>
             <div class="control">
-                <button id="submitAtivo" class="button is-primary">Submit</button>
+                <button id="submitAtivo" class="button is-primary">Criar Ativo</button>
             </div>
         </div>
     </div>
