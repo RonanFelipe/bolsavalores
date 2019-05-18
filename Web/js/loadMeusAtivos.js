@@ -5,6 +5,7 @@ function searchUser() {
             let ativos = data;
             let userAtivos = [];
             let nomeUser = document.getElementById("nomeUser").value;
+            let removeColuna = document.getElementById("loadMeusAtivos").innerHTML = "";
             for (let i = 0; i < ativos.length; i++){
                 if (nomeUser === ativos[i].user.name) {
                     userAtivos.push(ativos[i]);
