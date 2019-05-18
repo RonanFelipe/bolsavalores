@@ -79,21 +79,19 @@
             <div class="field">
                 <label class="label">Usuário</label>
                 <div class="control">
-                    <input id="usuario" class="input" type="number" pattern="[0-9]+" placeholder="Usuário">
+                    <input id="usuario" class="input" type="number" pattern="[0-9]+" placeholder="ID do usuário">
                 </div>
-                <p class="help">Digite o nome do dono do ativo</p>
+                <p class="help">Consulte ID na tabela ao lado</p>
             </div>
             <div class="control">
                 <button id="submitAtivo" class="button is-primary">Criar Ativo</button>
             </div>
         </div>
-        <div id="allUsers" class="column is-one-quarter">
-            <script>showUsers()</script>
-            <div class="notification is-primary">
-                  Primar lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet,
-                  consectetur adipiscing elit
+        <div class="column is-one-quarter">
+            <div id="allUsers" class="notification is-primary">
+                  <!--All users here-->
             </div>
+            <script>showUsers()</script>
         </div>
     </div>
 </section>
