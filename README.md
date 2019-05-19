@@ -4,3 +4,4 @@ Avaliação Laboratório 5 - Bolsa de Valores
 **Disciplina:** Laboratório de Desenvolvimento de Aplicações Móveis e Distribuídas  
 **Professor:** Henrique  Batista da Silva  
 **Curso:** Engenharia de Software  
+**Aplicação:** Bolsa de Valores em Python, utilizando framework Django.
