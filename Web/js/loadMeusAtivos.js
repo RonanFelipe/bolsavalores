@@ -28,6 +28,8 @@ function searchUser() {
                 firstSpan.innerHTML = userAtivos[i].codigo;
                 secondSpan.innerHTML = "R$ " + userAtivos[i].preco;
                 sellSpan.innerHTML = "Vender";
+                sellSpan.id = userAtivos[i].id;
+                sellSpan.setAttribute('onclick', 'ativarVenda(this.id)');
                 divMeusAtivos.appendChild(firstSpan);
                 divMeusAtivos.appendChild(secondSpan);
                 divMeusAtivos.appendChild(sellSpan);
