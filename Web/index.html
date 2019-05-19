@@ -44,6 +44,9 @@
             </div>
             <div class="control">
                 <button id="submitAtivo" class="button is-primary" onclick="searchUser()">Procurar</button>
+                <script>
+                    document.getElementById('submitAtivo').addEventListener("mouseover", loadAtivos);
+                </script>
             </div>
         </div>
         <div class="column is-one-quarter">
@@ -85,6 +88,9 @@
             </div>
             <div class="control">
                 <button id="submitAtivo" class="button is-primary" onclick="createAtivos()">Criar Ativo</button>
+                <script>
+                    document.getElementById('submitAtivo').addEventListener("mouseover", loadAtivos);
+                </script>
             </div>
         </div>
         <div class="column is-one-quarter">
@@ -94,6 +100,15 @@
             <script>showUsers()</script>
         </div>
     </div>
+    <script>
+        setInterval(function () {
+            loadAtivos();
+            let inputUser = document.getElementById("nomeUser");
+            if (inputUser.value !== ""){
+                searchUser();
+            }
+        }, 3000);
+    </script>
 </section>
 <div class="container">
     <div class="notification">

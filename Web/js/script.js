@@ -3,6 +3,7 @@ function loadAtivos() {
         .then((resp) => resp.json())
         .then(function (data) {
             let ativos = data;
+            let removeChildNodes = document.getElementById("loadAtivos").innerHTML = "";
             for (let i = 0; i < ativos.length; i++) {
                 let coluna = document.getElementById("loadAtivos");
                 let divAtivos = document.createElement("div");
@@ -30,6 +31,7 @@ function loadAtivos() {
                 divAtivos.appendChild(thirdSpan);
                 divAtivos.appendChild(sellSpan);
                 coluna.appendChild(divAtivos);
+                document.getElementById(ativos[i].id).addEventListener("click", loadAtivos);
             }
         })
         .catch(function (error) {

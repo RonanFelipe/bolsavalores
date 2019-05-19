@@ -34,6 +34,7 @@ function searchUser() {
                 divMeusAtivos.appendChild(secondSpan);
                 divMeusAtivos.appendChild(sellSpan);
                 coluna.appendChild(divMeusAtivos);
+                document.getElementById(userAtivos[i].id).addEventListener("click", loadAtivos);
             }
         })
 }
